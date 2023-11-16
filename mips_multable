@@ -1,0 +1,14 @@
+#multiplication table of 10
+.text
+main: 
+li $s0, 1 #int i=1
+li $s1, 10#int p=10
+li $s2, 11#for loop condition
+for: beq $s0,$s2,done
+     mul $t0, $s1, $s0
+     li $v0,1
+     move $a0, $t0
+     syscall
+     addi $s0,$s0,1
+ 	j for
+     done:

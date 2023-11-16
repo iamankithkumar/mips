@@ -1,0 +1,15 @@
+#sum of first 10 natural numbers
+		.text
+main:
+	li $t0, 10
+	li	$t1, 0		# int i
+	li	$t2, 0		# int s
+for:	addi	$t1, $t1, 1	# i++
+	add	$t2, $t2, $t1	# s+=i
+	beq	$t0, $t1, print
+	j	for
+print:	li	$v0,1		
+	move	$a0, $t2
+	syscall
+
+	
